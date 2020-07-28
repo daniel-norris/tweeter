@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <section class="px-8 py-4">
+        <section class="px-8 py-4 mb-6">
             <header class="container mx-auto">
                 <h1 class="font-extrabold text-3xl text-teal-400">Tweeter.</h1>
             </header>
