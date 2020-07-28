@@ -2,7 +2,7 @@
 
     <div class="mr-2 flex-shrink-0">
         <img
-            src="https://i.pravatar.cc/50?u={{ $tweet->user->email }}"
+            src="{{ auth()->user()->avatar }}"
             alt=""
             class="rounded-full mr-2"
         >

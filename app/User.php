@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return Tweet::where('user_id', $this->id)->latest()->get();
     }
+
+    // defining an accessor here which Laravel enables us to access simply using 'avatar'
+    public function getAvatarAttribute()
+    {
+        return "https://i.pravatar.cc/40?u=" . $this->email;
+    }
 }
