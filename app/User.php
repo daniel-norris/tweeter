@@ -40,10 +40,11 @@ class User extends Authenticatable
     public function timeline()
     {
         // calling follows() instead of follow returns just an index rather than full records === more performant
-        $ids = $this->follows()->pluck('id');
-        $ids->push($this->id);
+        $friends = $this->follows()->pluck('id');
 
-        return Tweet::wherein('user_id', $ids)->latest()->get();
+        return Tweet::wherein('user_id', $friends)
+            ->orWhere('user_id', $this->id)
+            ->latest()->get();
     }
 
     public function tweets()
