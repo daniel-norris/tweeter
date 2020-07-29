@@ -19,4 +19,17 @@ class TweetController extends Controller
 
         return redirect('/home');
     }
+
+    //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        return view('home', [
+            'tweets' => auth()->user()->timeline()
+        ]);
+    }
 }
