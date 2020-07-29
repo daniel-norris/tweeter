@@ -7,6 +7,13 @@ use App\Tweet;
 
 class TweetController extends Controller
 {
+    public function index()
+    {
+        return view('home', [
+            'tweets' => auth()->user()->timeline()
+        ]);
+    }
+
     public function store()
     {
 
@@ -18,18 +25,5 @@ class TweetController extends Controller
         ]);
 
         return redirect('/home');
-    }
-
-    //
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function index()
-    {
-        return view('home', [
-            'tweets' => auth()->user()->timeline()
-        ]);
     }
 }

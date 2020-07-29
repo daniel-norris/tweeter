@@ -17,8 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// named route here to 'home'
-Route::get('/tweets', 'TweetController@index')->name('home');
-Route::post('/tweets', 'TweetController@store');
+Route::middleware('auth')->group(function () {
+    // named route here to 'home'
+    Route::get('/tweets', 'TweetController@index')->name('home');
+    Route::post('/tweets', 'TweetController@store');
+});
 
 Auth::routes();
