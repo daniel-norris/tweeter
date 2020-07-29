@@ -4,13 +4,15 @@
     <!-- iterating over static data for now -->
     @foreach (auth()->user()->follows as $user)
     <li class="mb-4">
-        <div class="flex items-center text-sm">
-            <img
-                src="{{ $user->avatar }}"
-                alt=""
-                class="rounded-full mr-2"
-            >
-            {{ $user->name   }}
+        <div>
+            <a href="{{ route('profile', $user->name) }}" class="flex items-center text-sm">
+                <img
+                    src="{{ $user->avatar }}"
+                    alt=""
+                    class="rounded-full mr-2"
+                >
+                {{  $user->name   }}
+            </a>
         </div>
     </li>
     @endforeach
