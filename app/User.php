@@ -69,4 +69,11 @@ class User extends Authenticatable
         // specified custom column names below
         return $this->belongsToMany(User::class,  'follows', 'user_id', 'following_user_id');
     }
+
+    // attribute in database used for route model binding
+    // changes RMB from id to what ever you want
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }
