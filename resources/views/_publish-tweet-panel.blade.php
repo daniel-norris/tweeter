@@ -6,7 +6,7 @@
             name="body"
             class="w-full"
             placeholder="Whatcha twooting today?"
-            required
+
         ></textarea>
 
         <hr class="my-4">
@@ -26,4 +26,13 @@
             </button>
 
         </footer>
+
+    </form>
+
+    @error('body')
+
+        <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+
+    @enderror
+
 </div>
