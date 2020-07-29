@@ -24,6 +24,6 @@ class TweetController extends Controller
             'body' => request('body'),
         ]);
 
-        return redirect('/home');
+        return redirect('/tweets');
     }
 }

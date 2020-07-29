@@ -2,7 +2,7 @@
 
     <div class="mr-2 flex-shrink-0">
         <img
-            src="{{ auth()->user()->avatar }}"
+            src="{{ $tweet->user->avatar }}"
             alt=""
             class="rounded-full mr-2"
         >
