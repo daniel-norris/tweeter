@@ -22,7 +22,7 @@
 
         </div>
 
-        <div class="lg:w-1/6 bg-blue-100 rounded-lg p-4">
+        <div class="lg:w-1/6 bg-blue-100 rounded-lg p-4" style="height: 100%">
             @include ('_friends-list')
         </div>
 
