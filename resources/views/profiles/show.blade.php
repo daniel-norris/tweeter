@@ -6,7 +6,7 @@
         <img
             src="https://pbs.twimg.com/profile_banners/3291299176/1588627303/1080x360"
             alt=""
-            class="mb-2"
+            class="mb-2 rounded-lg"
         >
 
         <div class="flex justify-between items-center mb-4 ">
