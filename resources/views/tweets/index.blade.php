@@ -1,15 +1,7 @@
-@extends('layouts.app')
+<x-app>
+    <div>
+        @include ('_publish-tweet-panel')
 
-@section('content')
-
-    @include ('_publish-tweet-panel')
-
-    <div class="border border-gray-300 rounded-lg">
-
-        @foreach ($tweets as $tweet)
-            @include('_tweet')
-        @endforeach
-
+        @include ('_timeline')
     </div>
-
-@endsection
+</x-app>
