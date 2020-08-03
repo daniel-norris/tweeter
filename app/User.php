@@ -55,7 +55,7 @@ class User extends Authenticatable
     // defining an accessor here which Laravel enables us to access simply using 'avatar'
     public function getAvatarAttribute()
     {
-        return "https://i.pravatar.cc/40?u=" . $this->email;
+        return "https://i.pravatar.cc/200?u=" . $this->email;
     }
 
     public function follow(User $user)
