@@ -58,11 +58,4 @@ class User extends Authenticatable
     {
         return "https://i.pravatar.cc/200?u=" . $this->email;
     }
-
-    // attribute in database used for route model binding
-    // changes RMB from id to what ever you want
-    public function getRouteKeyName()
-    {
-        return 'name';
-    }
 }

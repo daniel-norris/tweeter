@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/tweets', 'TweetController@store');
 });
 
-Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
+// can add name of attribute to wildcard to change RMB to name instead of id
+Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');
 
 Auth::routes();
