@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function tweets()
     {
-        return $this->hasMany(Tweet::class);
+        return $this->hasMany(Tweet::class)->latest();
     }
 
     // defining an accessor here which Laravel enables us to access simply using 'avatar'
