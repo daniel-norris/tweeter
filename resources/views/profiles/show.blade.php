@@ -15,9 +15,19 @@
                 <p class="text-sm ">Joined {{ $user->created_at->diffForHumans() }}</p>
             </div>
 
-            <div>
-                <a href="" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs">Edit Profile</a>
-                <a href="" class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs">Follow Me</a>
+            <div class="flex">
+
+                <a href="" class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs">Edit Profile</a>
+
+                <form method="POST" action="/profiles/{{ $user->name }}/follow">
+                    @csrf
+                    <button
+                        type="submit"
+                        class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs"
+                    >
+                        {{ auth()->user()->following($user) ? "Unfollow Me" : "Follow Me" }}
+                    </button>
+                </form>
             </div>
         </div>
 
