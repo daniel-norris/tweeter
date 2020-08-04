@@ -27,7 +27,7 @@
 
             <div class="flex">
 
-                @if (auth()->user()->is($user))
+                @if (current_user()->is($user))
                     <a
                         href=""
                         class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs">
