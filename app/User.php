@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'name', 'email', 'password',
+        'username', 'avatar', 'name', 'email', 'password',
     ];
 
     /**
@@ -54,9 +54,10 @@ class User extends Authenticatable
     }
 
     // defining an accessor here which Laravel enables us to access simply using 'avatar'
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        return "https://i.pravatar.cc/200?u=" . $this->email;
+        // links to the storage set up in the .env file
+        return asset($value);
     }
 
     public function path($append = '')
