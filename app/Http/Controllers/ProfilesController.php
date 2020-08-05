@@ -31,7 +31,12 @@ class ProfilesController extends Controller
         ]);
 
         // stores avatars in an avatars file and saves the path to this store in attributes
-        $attributes['avatar'] = request('avatar')->store('avatars');
+        $attributes['avatar'] =
+            request('avatar')
+            ->storeAs(
+                'avatars',
+                request('username') . '-avatar.' . request('avatar')->extension()
+            );
 
         $user->update($attributes);
 

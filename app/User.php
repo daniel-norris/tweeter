@@ -57,7 +57,7 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         // links to the storage set up in the .env file
-        return asset($value);
+        return asset('storage/' . $value);
     }
 
     public function path($append = '')

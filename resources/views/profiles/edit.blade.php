@@ -51,16 +51,25 @@
                 Avatar
             </label>
 
-            <input class="border border-gray-400 p-2 w-full"
-                type="file"
-                name="avatar"
-                id="avatar"
-                required
-            >
+            <div class="flex">
+                <input class="border border-gray-400 p-2 w-full"
+                    type="file"
+                    name="avatar"
+                    id="avatar"
+                    required
+                >
+
+                <img src="{{ $user->avatar }}"
+                        alt="your avatar"
+                        width="40"
+                >
+
+            </div>
 
             @error('avatar')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
+
         </div>
 
         <div class="mb-6">
