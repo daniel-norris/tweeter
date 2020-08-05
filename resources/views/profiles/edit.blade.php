@@ -14,6 +14,7 @@
                 type="text"
                 name="name"
                 id="name"
+                value="{{$user->name}}"
                 required
             >
 
@@ -33,6 +34,7 @@
                 type="text"
                 name="username"
                 id="username"
+                value="{{$user->username}}"
                 required
             >
 
@@ -52,6 +54,7 @@
                 type="email"
                 name="email"
                 id="email"
+                value="{{$user->email}}"
                 required
             >
 
@@ -99,6 +102,12 @@
             @enderror
         </div>
 
-
+        <div class="mb-6">
+            <button type="submit"
+                class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+            >
+                Submit
+            </button>
+        </div>
     </form>
 </x-app>
