@@ -53,11 +53,16 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class)->latest();
     }
 
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
     // defining an accessor here which Laravel enables us to access simply using 'avatar'
     public function getAvatarAttribute($value)
     {
         // links to the storage set up in the .env file
-        return asset('storage/' . $value);
+        return asset("/storage/{$value}");
     }
 
     public function path($append = '')

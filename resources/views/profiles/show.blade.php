@@ -15,7 +15,7 @@
                 alt=""
                 class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
                 width="150"
-                style="left: 50%;"
+                style="left: 50%; object-fit: cover; height: 150px;"
             >
         </div>
 

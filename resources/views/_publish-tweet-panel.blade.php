@@ -17,7 +17,7 @@
                 alt="your avatar"
                 class="rounded-full mr-2"
                 width="50"
-                height="50"
+                style="height: 50px; object-fit: cover;"
             >
 
             <button
