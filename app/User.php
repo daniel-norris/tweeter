@@ -58,4 +58,11 @@ class User extends Authenticatable
     {
         return "https://i.pravatar.cc/200?u=" . $this->email;
     }
+
+    public function path($append = '')
+    {
+        $path = route('profile', $this->name);
+
+        return $append ? "{$path}/{$append}" : $path;
+    }
 }
