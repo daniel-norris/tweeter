@@ -19,7 +19,7 @@
     </li>
 
     @empty
-        <li>No friends yet!</li>
+        <li>Not following anyone!</li>
 
     @endforelse
 </ul>
