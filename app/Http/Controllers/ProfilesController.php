@@ -24,10 +24,14 @@ class ProfilesController extends Controller
         $attributes = request()->validate([
             'username' => ['string', 'required', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($user)],
             'name' => ['string', 'required', 'max:255'],
+            'avatar' => ['required', 'file'],
             'email' => ['string', 'required', 'email', 'max:255', Rule::unique('users')->ignore($user)],
             // 'confirmed' looks for password_confirmation and makes sure the two match
             'password' => ['string', 'required', 'min:8', 'max:255', 'confirmed']
         ]);
+
+        // stores avatars in an avatars file and saves the path to this store in attributes
+        $attributes['avatar'] = request('avatar')->store('avatars');
 
         $user->update($attributes);
 
