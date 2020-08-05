@@ -21,11 +21,11 @@ Route::middleware('auth')->group(function () {
     // named route here to 'home'
     Route::get('/tweets', 'TweetController@index')->name('home');
     Route::post('/tweets', 'TweetController@store');
-    Route::post('/profiles/{user:name}/follow', 'FollowsController@store');
-    Route::get('/profiles/{user:name}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
+    Route::post('/profiles/{user:username}/follow', 'FollowsController@store');
+    Route::get('/profiles/{user:username}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
 });
 
-// can add name of attribute to wildcard to change RMB to name instead of id
-Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');
+// can add name of attribute to wildcard to change RMB to username instead of id
+Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
 
 Auth::routes();
