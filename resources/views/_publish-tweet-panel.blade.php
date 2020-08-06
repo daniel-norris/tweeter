@@ -6,7 +6,7 @@
             name="body"
             class="w-full"
             placeholder="What do you want to tweet?"
-
+            required
         ></textarea>
 
         <hr class="my-4">
@@ -20,12 +20,8 @@
                 style="height: 50px; object-fit: cover;"
             >
 
-            <button
-                class="bg-blue-500 rounded-lg px-4 shadow text-white"
-                type="submit"
-            >
-                Tweet
-            </button>
+            <x-publish-button>
+            </x-publish-button>
 
         </footer>
 
