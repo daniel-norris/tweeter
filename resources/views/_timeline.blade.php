@@ -8,6 +8,7 @@
 
     @endforelse
 
-    {{ $tweets->links() }}
 
 </div>
+
+{{ $tweets->links() }}
