@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    // named route here to 'home'
     Route::get('/tweets', 'TweetController@index')->name('home');
     Route::post('/tweets', 'TweetController@store');
     Route::post('/tweets/{tweet}/like', 'TweetLikesController@store');
@@ -29,7 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/explore', 'ExploreController');
 });
 
-// can add name of attribute to wildcard to change RMB to username instead of id
 Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
 
 

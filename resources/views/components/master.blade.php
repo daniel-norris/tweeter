@@ -30,7 +30,6 @@
         {{ $slot }}
     </div>
 
-        <!-- quickens loading -->
         <script src="https://unpkg.com/turbolinks"></script>
 
 </body>

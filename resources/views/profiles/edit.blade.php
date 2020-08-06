@@ -1,5 +1,4 @@
 <x-app>
-    <!-- use enctype for forms that accepts file types -->
     <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -110,7 +109,6 @@
             @enderror
         </div>
 
-        <!-- password_confirmation naming convention is important here -->
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                 for="password_confirmation"

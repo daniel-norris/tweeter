@@ -27,7 +27,6 @@
 
             <div class="flex">
 
-                <!-- refers to userpolicy to determine if this user can access the edit policy -->
                 @can ('edit', $user)
                     <a
                         href="{{ $user->path('edit') }}"
@@ -36,7 +35,6 @@
                     </a>
                 @endcan
 
-                <!-- passes the $user variable to the blade component -->
                 <x-follow-button :user="$user"></x-follow-button>
             </div>
         </div>

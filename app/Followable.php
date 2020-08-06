@@ -22,8 +22,6 @@ trait Followable
 
     public function follows()
     {
-        // defining the many to many relationship
-        // specified custom column names below
         return $this->belongsToMany(
             User::class,
             'follows',
@@ -34,7 +32,7 @@ trait Followable
 
     public function following(User $user)
     {
-        // calling follows->exists() without parenthesis it would return a collection of "everything" which can have performance issues on large datasets
+
         return $this->follows()
             ->where('following_user_id', $user->id)
             ->exists();

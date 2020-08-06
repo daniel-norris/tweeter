@@ -8,8 +8,6 @@ class Tweet extends Model
 {
     use Likable;
 
-    // opposite of $fillable and acts as a blacklist for attributes that cannot be mass assigned
-    // left it empty temporarily
     protected $guarded = [];
 
     public function user()

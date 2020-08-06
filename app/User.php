@@ -40,7 +40,6 @@ class User extends Authenticatable
 
     public function timeline()
     {
-        // calling follows() instead of follow returns just an index rather than full records === more performant
         $friends = $this->follows()->pluck('id');
 
         return Tweet::wherein('user_id', $friends)
@@ -60,10 +59,8 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
-    // defining an accessor here which Laravel enables us to access simply using 'avatar'
     public function getAvatarAttribute($value)
     {
-        // links to the storage set up in the .env file
         return asset($value ? "/storage/{$value}" : '/images/default-avatar.png');
     }
 
