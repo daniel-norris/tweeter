@@ -7,11 +7,12 @@
             class="w-full"
             placeholder="What do you want to tweet?"
             required
+            autofocus
         ></textarea>
 
         <hr class="my-4">
 
-        <footer class="flex justify-between">
+        <footer class="flex justify-between items-center">
             <img
                 src="{{ auth()->user()->avatar }}"
                 alt="your avatar"
