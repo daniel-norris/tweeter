@@ -1,12 +1,21 @@
 <x-app>
     <div>
         @foreach ($users as $user)
-            <img src="{{ $user->avatar }}"
-                alt="{{ $user->username }}'s avatar"
-                width="60"
-                style="height: 60px; object-fit: cover; "
+            <a href="{{ $user->path() }}" class="flex items-center mb-5">
+                <img src="{{ $user->avatar }}"
+                    alt="{{ $user->username }}'s avatar"
+                    width="60"
+                    style="height: 60px; object-fit: cover; "
+                    class="mr-4 rounded"
 
-            >
+                >
+                <div>
+                    <h4 class="font-bold">{{ '@' . $user->username }}</h4>
+                </div>
+            </a>
         @endforeach
+
+        {{ $users->links() }}
+
     </div>
 </x-app>
