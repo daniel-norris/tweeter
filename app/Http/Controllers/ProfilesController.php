@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
@@ -43,5 +44,12 @@ class ProfilesController extends Controller
         $user->update($attributes);
 
         return redirect($user->path());
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()->route('home');
     }
 }

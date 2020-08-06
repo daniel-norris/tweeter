@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profiles/{user:username}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
     Route::patch('/profiles/{user:username}', 'ProfilesController@update')->middleware('can:edit,user');
     Route::get('/explore', 'ExploreController@index');
+    Route::get('/logout', 'ProfilesController@logout')->name('logout');
 });
 
 // can add name of attribute to wildcard to change RMB to username instead of id
