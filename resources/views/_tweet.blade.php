@@ -31,7 +31,7 @@
                     </g>
                 </svg>
 
-                <span class="text-xs text-gray-500">10</span>
+                <span class="text-xs text-gray-500">{{ $tweet->likes ?: 0 }}</span>
             </div>
 
             <div class="flex items-center">
@@ -43,7 +43,7 @@
                     </g>
                     </svg>
 
-                <span class="text-xs text-gray-500">10</span>
+                <span class="text-xs text-gray-500">{{ $tweet->dislikes ?: 0 }}</span>
             </div>
         </div>
     </div>

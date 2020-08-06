@@ -2,8 +2,22 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait Likable
 {
+    // type hinting the eloquent type query builder
+    public function scopeWithLikes(Builder $query)
+    {
+        // recreating mysql left join of tweets and likes
+        $query->leftJoinSub(
+            'select tweet_id, sum(liked) likes, sum(!liked) dislikes from likes group by tweet_id',
+            'likes',
+            'likes.tweet_id',
+            'tweets.id'
+        );
+    }
+
     public function like($user = null, $liked = true)
     {
         $this->likes()->updateOrCreate(
