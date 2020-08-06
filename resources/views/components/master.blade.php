@@ -27,8 +27,11 @@
             </header>
         </section>
 
+        {{ $slot }}
     </div>
 
-    {{ $slot }}
+        <!-- quickens loading -->
+        <script src="https://unpkg.com/turbolinks"></script>
+
 </body>
 </html>
