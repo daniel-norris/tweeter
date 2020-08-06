@@ -5,7 +5,7 @@
         <textarea
             name="body"
             class="w-full"
-            placeholder="Whatcha twooting today?"
+            placeholder="What do you want to tweet?"
 
         ></textarea>
 
@@ -21,10 +21,10 @@
             >
 
             <button
-                class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white"
+                class="bg-blue-500 rounded-lg px-4 shadow text-white"
                 type="submit"
             >
-                Twoot
+                Tweet
             </button>
 
         </footer>
