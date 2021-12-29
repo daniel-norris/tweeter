@@ -30,5 +30,4 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
 
-
 Auth::routes();
