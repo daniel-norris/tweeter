@@ -44,13 +44,18 @@ docker-compose up -d
 ### Install dependencies
 
 ```bash
-docker-compose exec app composer install
+# install composer dependencies
+./run composer install
+
+# install npm dependencies
+./npm install
+
 ```
 
 ### Generate an app key
 
 ```bash
-docker-compose exec app php artisan key:generate
+./run php artisan key:generate
 ```
 
 ### Create a non-root MySQL user
@@ -74,8 +79,17 @@ exit
 ### Run the migrations
 
 ```bash
-docker-compose exec php artisan migrate
+./run php artisan migrate
 ```
 
 ### View the app
 Visit the app at `http://your_server_ip`.
+
+## Scripts
+The `run` and `npm` bash scripts are wrappers for the docker-compose exec command. 
+
+Composer and Artisan or any docker-compose command can be run on the PHP ('app') container using, e.g.:
+`./run composer install | update`
+
+Npm or any docker-compose command can be run on the Node ('node') container using, e.g.:
+`./npm install`
