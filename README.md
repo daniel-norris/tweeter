@@ -8,6 +8,12 @@ I've revisited this in Dec, 2021 to dockerise the application using Nginx to ser
 
 ## Installation
 
+### Pre-requisites
+You'll require the following dependencies:
+
+- Docker Engine ^20.10.12
+- Docker Compose ^1.18.0
+
 ### Pull the repository
 
 ```bash
@@ -20,7 +26,7 @@ git clone git@github.com:daniel-norris/tweeter.git tweeter
 cp .env.example .env
 
 # fill out the following variables
-# create any username
+# create any username or leave the default 'tweeter'
 DB_USERNAME=
 # set a password for the mysql user above
 DB_PASSWORD=
@@ -44,7 +50,7 @@ docker-compose exec app composer install
 ### Generate an app key
 
 ```bash
-docker-compose exec php artisan key:generate
+docker-compose exec app php artisan key:generate
 ```
 
 ### Create a non-root MySQL user
@@ -57,7 +63,7 @@ docker-compose exec db bash
 mysql -u root -p
 
 # grant your tweeter user privileges to the tweeter db
-grant all on tweeter.* to 'tweeter'@'%' identified by '<db_user_password>';
+grant all on tweeter.* to '<DB_USERNAME>'@'%' identified by '<DB_PASSWORD>';
 
 # flush privileges to set the changes
 flush privileges
@@ -72,4 +78,4 @@ docker-compose exec php artisan migrate
 ```
 
 ### View the app
-Visit the app at `http://your_server_ip`
+Visit the app at `http://your_server_ip`.
