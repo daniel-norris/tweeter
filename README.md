@@ -1,6 +1,6 @@
 # Tweeter
 
-![Tests](https://github.com/norrisdan/tweeter/actions/workflows/main.yml/badge.svg)
+![Tests](https://github.com/daniel-norris/tweeter/actions/workflows/main.yml/badge.svg?branch=master)
 
 This was originally built a couple months after completing a bootcamp in Oct, 2020. The project was aimed at just consolidating my experience and built using Laravel and TailwindCSS. 
 
