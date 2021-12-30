@@ -1,6 +1,8 @@
 # Tweeter
 
-![Tests](https://github.com/daniel-norris/tweeter/actions/workflows/main.yml/badge.svg?branch=master)
+![Tests](https://github.com/daniel-norris/tweeter/actions/workflows/main.yaml/badge.svg?branch=master)
+
+<br>
 
 This was originally built a couple months after completing a bootcamp in Oct, 2020. The project was aimed at just consolidating my experience and built using Laravel and TailwindCSS. 
 
@@ -95,3 +97,10 @@ Composer and Artisan or any docker-compose command can be run on the PHP ('app')
 
 Npm or any docker-compose command can be run on the Node ('node') container using, e.g.:
 `./npm install`
+
+## GitHub pipelines
+The project currently has a single job defined in GitHub actions: 
+
+- Tests: which runs a Ubuntu runner and runs PHPUnit tests to ensure that all tests are passing (the app needs test coverage)
+
+I'm planning to find a new hosting solution for this project (potentially ECS on AWS), previously it was just running on an EC2 instance on AWS. However, for the time being, there is no deployment step at the moment. 
