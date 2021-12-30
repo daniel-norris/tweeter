@@ -12,7 +12,7 @@ I've revisited this in Dec, 2021 to dockerise the application and create a CI pi
 
 ## Installation
 
-### Pre-requisites
+### Prerequisites
 You'll require the following dependencies:
 
 - Docker Engine ^20.10.12
