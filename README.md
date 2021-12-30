@@ -1,8 +1,10 @@
 # Tweeter
 
+![Tests](https://github.com/norrisdan/tweeter/actions/workflows/main.yml/badge.svg)
+
 This was originally built a couple months after completing a bootcamp in Oct, 2020. The project was aimed at just consolidating my experience and built using Laravel and TailwindCSS. 
 
-I've revisited this in Dec, 2021 to dockerise the application using Nginx to serve it. 
+I've revisited this in Dec, 2021 to dockerise the application and create a CI pipeline for it using GitHub Actions. 
 
 ![recording](images/tweeter.gif)
 
