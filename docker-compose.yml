@@ -16,6 +16,7 @@ services:
         volumes:
             - ./:/var/www
             - ./docker/local.ini:/usr/local/etc/php/conf.d/local.ini
+            - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/99-xdebug.ini
         networks:
             - app-network
 
@@ -48,6 +49,18 @@ services:
         volumes:
             - dbdata:/var/lib/mysql
             - ./docker/my.cnf:/etc/mysql/my.cnf
+        networks:
+            - app-network
+
+    node:
+        # using latest Node LTS
+        image: node:16.13.1
+        container_name: node
+        restart: unless-stopped
+        tty: true
+        working_dir: /opt
+        volumes:
+            - .:/opt
         networks:
             - app-network
 

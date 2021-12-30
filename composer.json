@@ -57,6 +57,8 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "test": "@php vendor/bin/phpunit --colors=always",
+        "test-coverage": "@php -d pcov.enabled=1 vendor/bin/phpunit --colors=always --coverage-html .coverage/php --coverage-clover .coverage/php/cov.xml"
     }
 }

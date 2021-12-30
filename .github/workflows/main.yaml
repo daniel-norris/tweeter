@@ -1,0 +1,35 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+    phpunit:
+        runs-on: ubuntu-20.04
+        environment: production_environment
+        name: Runs PHPUnit tests
+        container:
+            image: norrisdan/php74-fpm:latest
+
+        services:
+            mysql:
+                image: mysql:5.7.22
+                env:
+                    MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+                    MYSQL_DATABASE: tweeter
+                ports:
+                    - 33306:3306
+
+        steps:
+        - uses: actions/checkout@v2
+        - name: Install Composer dependencies
+          run: |
+            composer install
+            
+        - name: Prepare application
+          run: |
+            cp .env.example .env
+            php artisan key:generate
+
+        - name: Run tests
+          run: composer test
+
